@@ -1,24 +1,24 @@
-import { Layout, Spin } from 'antd';
-import AppSider from './AppSider';
-import AppHeader from './AppHeader';
-import AppContent from './AppContent';
-import { useContext } from 'react';
-import CryptoContext from '../../context/crypto-context';
+import { Layout, Spin } from 'antd'
+import AppHeader from './AppHeader'
+import AppSider from './AppSider'
+import AppContent from './AppContent'
+import { useContext } from 'react'
+import CryptoContext from '../../context/crypto-context'
 
 export default function AppLayout() {
-    const { loading } = useContext(CryptoContext)
+  const { loading } = useContext(CryptoContext)
 
-    if (loading) {
-        return <Spin fullscreen ></Spin>
-    }
+  if (loading) {
+    return <Spin fullscreen />
+  }
 
-    return (
+  return (
     <Layout>
-    <AppHeader></AppHeader>
-    <Layout>
-      <AppSider></AppSider>
-      <AppContent></AppContent>
+      <AppHeader />
+      <Layout>
+        <AppSider />
+        <AppContent />
+      </Layout>
     </Layout>
-  </Layout>
-    )
+  )
 }
